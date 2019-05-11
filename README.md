@@ -3,6 +3,7 @@
 
 [![NPM Version][npm-image]][npm-url]
 [![Downloads Stats][npm-downloads]][npm-url]
+[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://taekimjr.github.io/conductor-animate/)
 
 Conductor is a React animation library that makes it easier to coordinate different animations
 across your layout from a single, simple configuration. Coordinating complex page layout animations
