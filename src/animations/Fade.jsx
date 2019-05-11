@@ -1,7 +1,6 @@
 import React from 'react';
 import BaseReactTransitionGroup from './BaseReactTransitionGroup';
 
-
 /*
  * Fade
  * Will fade in the contents of the Animated wrapper it is applied to.
