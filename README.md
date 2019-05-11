@@ -15,13 +15,13 @@ create your own custom animations and inject them in.
 npm:
 
 ```sh
-npm install conductor
+npm install conductor-animate
 ```
 
 yarn:
 
 ```sh
-yarn add conductor
+yarn add conductor-animate
 ```
 
 ## Basic Usage
