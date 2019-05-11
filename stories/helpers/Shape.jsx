@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import palette from './palette';
 
 const propTypes = {
+  children: PropTypes.node,
+  centerChildren: PropTypes.bool,
   size: PropTypes.string,
   spacing: PropTypes.string,
   color: PropTypes.string,
   borderRadius: PropTypes.string,
 };
 const defaultProps = {
+  children: null,
+  centerChildren: true,
   size: '250px',
   spacing: '50px',
   color: palette.primary,
@@ -16,6 +20,8 @@ const defaultProps = {
 };
 
 const Shape = ({
+  children,
+  centerChildren,
   size,
   spacing,
   color,
@@ -24,10 +30,17 @@ const Shape = ({
 }) => (
   <div
     style={{
-      width: size, height: size, margin: spacing, background: color, borderRadius,
+      width: size,
+      height: size,
+      margin: spacing,
+      background: color,
+      borderRadius,
+      ...(centerChildren ? { display: 'flex', alignItems: 'center', justifyContent: 'center' } : {}),
     }}
     {...rest}
-  />
+  >
+    {children}
+  </div>
 );
 
 Shape.propTypes = propTypes;

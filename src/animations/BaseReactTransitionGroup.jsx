@@ -43,7 +43,7 @@ const propTypes = {
 
 const defaultProps = {
   timingFunction: 'ease-in-out',
-  duration: 5000,
+  duration: 1500,
   delay: 0,
 };
 
