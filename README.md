@@ -279,7 +279,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 [npm-downloads]: https://img.shields.io/npm/dm/conductor-animate.svg?style=flat-square
 
 ## Publishing a new version to NPM
-1. Update version in package.json ([semver](https://semver.org/))
+1. Update version in package.json ([semver](https://semver.org/)) and commit to Master
 ```
 "version": "1.2.3",
 ```
@@ -290,5 +290,5 @@ git push origin master v1.2.3
 ```
 3. Publish
 ```
-npm run publish
+npm publish
 ```
