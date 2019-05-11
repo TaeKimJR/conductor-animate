@@ -278,4 +278,17 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 [npm-url]: https://npmjs.org/package/conductor-animate
 [npm-downloads]: https://img.shields.io/npm/dm/conductor-animate.svg?style=flat-square
 
-
+## Publishing a new version to NPM
+1. Update version in package.json ([semver](https://semver.org/))
+```
+"version": "1.2.3",
+```
+2. Tag the release
+```
+git tag v1.2.3
+git push origin master v1.2.3
+```
+3. Publish
+```
+npm run publish
+```
