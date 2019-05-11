@@ -10,14 +10,12 @@ animations and inject them into the Conductor system.
 
 Conductor is meant to make complex, page layout animations simple and easy.
 
-![](header.png)
-
 ## Installation
 
 npm:
 
 ```sh
-npm install conductor --save
+npm install conductor
 ```
 
 yarn:
@@ -47,11 +45,9 @@ const App = () => {
   // Render the Page w/ the Conductor and Animated Section
   return (
     <Conductor animations={animations} config={config}>
-      <div class="page">
-        <Animated id="HeaderSection">
-          <h1>This Header will fade in</h1>
-        </Animated>
-      </div>
+      <Animated id="HeaderSection">
+        <h1>This Header will fade in</h1>
+      </Animated>
     </Conductor>
   );
 };
@@ -92,7 +88,7 @@ export default App;
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Tae Kim – [@taekimjr](https://github.com/TaeKimJR) – taekimjr@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
