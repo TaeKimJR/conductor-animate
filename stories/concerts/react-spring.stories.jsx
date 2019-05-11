@@ -26,7 +26,7 @@ Fade.propTypes = {
 
 // Example of react-spring Trail animation
 // https://www.react-spring.io/docs/props/trail
-const FadeInList = ({ Item, items, ...rest }) => (
+const DropInList = ({ Item, items, ...rest }) => (
   <Trail
     {...rest}
     items={items}
@@ -38,7 +38,7 @@ const FadeInList = ({ Item, items, ...rest }) => (
     {item => props => <div style={props}><Item color={item.color} /></div>}
   </Trail>
 );
-FadeInList.propTypes = {
+DropInList.propTypes = {
   Item: PropTypes.elementType.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -48,7 +48,7 @@ FadeInList.propTypes = {
 
 const animations = {
   Fade,
-  FadeInList,
+  DropInList,
 };
 
 storiesOf('Third Party Concerts/react-spring', module)
@@ -199,10 +199,10 @@ storiesOf('Third Party Concerts/react-spring', module)
       </Conductor>
     );
   })
-  .add('Trailing List', () => {
+  .add('Drop In List', () => {
     const config = {
       ListOfItems: {
-        animation: 'FadeInList',
+        animation: 'DropInList',
       },
     };
 
