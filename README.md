@@ -247,6 +247,7 @@ and orchestrate them with Conductor.
 *Common Animation Libs*
 - [react-transition-group](https://github.com/reactjs/react-transition-group)
 - [react-spring](https://www.react-spring.io)
+- [react-animations](http://react-animations.herokuapp.com/)
 
 #### Passing options to an Animation
 The Animation can receive any additional options that are defined in the "config". For example, if
