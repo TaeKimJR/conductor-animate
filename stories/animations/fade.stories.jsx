@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Fade from '../src/animations/Fade';
-import Shape from './helpers/Shape';
+import Fade from '../../src/animations/Fade';
+import Shape from '../helpers/Shape';
 
-storiesOf('Fade', module)
+storiesOf('Animations/Fade', module)
   .add('Fade', () => (
     <Fade>
       <Shape />

@@ -1,16 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import Conductor from '../src/Conductor';
-import Animated from '../src/Animated';
-import Fade from '../src/animations/Fade';
-import Shape from './helpers/Shape';
-import palette from './helpers/palette';
+import { Spring, config as springConfig } from 'react-spring/renderprops';
+import Conductor from '../../src/Conductor';
+import Animated from '../../src/Animated';
+
+import Shape from '../helpers/Shape';
+import palette from '../helpers/palette';
+
+// Example of react-spring animation
+const Fade = ({ children, ...rest }) => (
+  <Spring
+    {...rest}
+    from={{ opacity: 0 }}
+    to={{ opacity: 1 }}
+    config={springConfig.molasses}
+  >
+    {styles => <div style={styles}>{children}</div>}
+  </Spring>
+);
+Fade.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 const animations = {
   Fade,
 };
 
-storiesOf('Concerts', module)
+storiesOf('Third Party Concerts/react-spring', module)
   .add('Basic Fade', () => {
     const config = {
       First: {
