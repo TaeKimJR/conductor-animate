@@ -4,7 +4,7 @@
   "description": "Orchestrating complex page layout animations with a flick of your wrist.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --silent",
     "storybook": "start-storybook"
   },
   "repository": {
