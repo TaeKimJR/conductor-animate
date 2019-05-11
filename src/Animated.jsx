@@ -2,18 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { contextTypes, CONTEXT_KEY } from './Conductor';
 
-/*
- * Animated
- * A wrapper that will apply an animation to its inner contents. It will receive directions from
- * the Conductor on how to animate based on its ID.
- *
- * Each Animated wrapper must be provided an "id" prop to be identified by the Conductor.
- *
- * If the "config" prop passed to the Conductor is a function, you can pass additional information
- * about an Animated wrapper through the "additional" prop. The config function can use this
- * information to make more specific decisions on how it should animate.
- */
-
 const propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,

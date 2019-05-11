@@ -178,15 +178,50 @@ needed.
 
 ```
 
-
 ### Animated
-// TODO
+A wrapper component that will apply an animation to its inner contents. It will receive directions
+from the Conductor on which Animation to use and how to use it.
+
+*Example*
+```
+<Conductor animations={animations} config={config}>
+  ...
+  <Animated id="AnimatedSection" additional={{ index: 0 }}>
+    <div>
+      I WILL ANIMATE!!!
+    </div>
+  </Animated>
+  ...
+</Conductor>
+```
 
 #### "id" prop
-// TODO
+Each Animated wrapper must be given an "id" prop. The ID must have an associated configuration in
+the "config" provided to the Conductor.
+
+*Shape*
+String
+
+*Example*
+"HeadingSection"
 
 #### "additional" prop
-// TODO
+When the "config" provided to the Conductor is a function, you can pass additional information about
+an Animated wrapper through the "additional" prop. The "config" function can use this information to make more specific decisions on how the Animated should animate.
+
+*Shape*
+```
+{
+  [additional: string]: any
+}
+```
+
+*Example*
+```javascript
+{
+  index: 0,
+}
+```
 
 ### Animations
 // TODO
