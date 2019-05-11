@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { contextTypes, CONTEXT_KEY } from './Conductor';
 
-class Member extends React.Component {
+class Animated extends React.PureComponent {
   constructor(props, context) {
     super(props);
 
@@ -22,10 +22,10 @@ class Member extends React.Component {
   }
 }
 
-Member.propTypes = {
+Animated.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
-Member.contextTypes = contextTypes;
+Animated.contextTypes = contextTypes;
 
-export default Member;
+export default Animated;

@@ -5,8 +5,8 @@ export const CONTEXT_KEY = '_CONDUCTOR_';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  score: PropTypes.shape({}).isRequired,
-  instruments: PropTypes.shape({}).isRequired,
+  config: PropTypes.shape({}).isRequired,
+  animations: PropTypes.shape({}).isRequired,
 };
 
 export const contextTypes = {
@@ -15,7 +15,7 @@ export const contextTypes = {
   }),
 };
 
-class Conductor extends React.Component {
+class Conductor extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -31,9 +31,9 @@ class Conductor extends React.Component {
   }
 
   register(id) {
-    const { score, instruments } = this.props;
-    const { instrument, ...options } = score[id];
-    const Wrapper = instruments[instrument];
+    const { config, animations } = this.props;
+    const { animation, ...options } = config[id];
+    const Wrapper = animations[animation];
 
     return {
       Wrapper,
