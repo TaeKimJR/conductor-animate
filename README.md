@@ -57,16 +57,30 @@ export default App;
 
 ## Documentation
 ### Conductor
-A provider component that conducts all Animated wrappers within itself by providing directions on
-how to animate. Be sure that your Conductor is placed at the top-level of your Application and
-wraps all Animated wrappers.
+A Provider component that conducts all nested Animated wrappers by providing directions on how to
+animate. Be sure that your Conductor wraps all Animated wrappers that you are expecting to conduct.
+
+##### Example
+```javascript
+<Conductor animations={animations} config={config}>
+  <Animated id="HeaderSection">
+    ...
+  </Animated>
+  <Animated id="BodySection">
+    ...
+  </Animated>
+  <Animated id="FooterSection">
+    ...
+  </Animated>
+</Conductor>
+```
 
 #### "animations" prop
 The "animations" prop is a mapping of animations that are used by the Conductor and live within the
-given "config". Be sure to keep this map as narrowed down as possible to avoid bloat within your
-application.
+given "config". Be sure to keep this map as narrowed down as possible to avoid shipping unnecessary
+animations to your app.
 
-The "animations" prop takes the shape of...
+##### Shape
 ```
 {
   [animation: string]: ComponentType,
@@ -74,7 +88,7 @@ The "animations" prop takes the shape of...
 ```
 - `animation`: The animation name paired with the Animation component.
 
-e.g.
+##### Example
 ```javascript
 {
   Fade: Fade,
@@ -89,7 +103,7 @@ For simple animations, use an object "config". For each Animate nested within th
 will need to specify a configuration for each of their IDs. You will receive an error if you miss
 one!
 
-The "config" prop takes the shape of...
+##### Shape
 ```
 {
   [id: string]: {
@@ -103,7 +117,7 @@ The "config" prop takes the shape of...
 - `option`: Additional props that are passed to the Animation. You can define as many options as
 needed.
 
-e.g.
+##### Example
 ```javascript
 {
   HeadingSection: {
@@ -124,7 +138,7 @@ e.g.
 For more advanced and complex usages you can use function "config". The function takes in the
 Animated ID and additional data. It should then return the config for that given Animated wrapper.
 
-The function takes the shape of...
+##### Shape
 ```
 (id: string, additional: object) => ({
   animation: string,
@@ -137,6 +151,30 @@ The function takes the shape of...
 - `animation`: The name that maps directly to an animation in the "animations" mapping.
 - `option`: Additional props that are passed to the Animation. You can define as many options as
 needed.
+
+##### Example
+```javascript
+(id, additional) => {
+  if (id === 'HeadingSection') {
+    return { animation: 'Fade' };
+  }
+
+  if (additional.index === 1) {
+    return {
+      animation: 'Fade',
+      duration: 1000,
+    };
+  }
+
+  return {
+    animation: 'Fade',
+    duration: 1000,
+    delay: 500,
+  };
+}
+
+```
+
 
 ### Animated
 // TODO
