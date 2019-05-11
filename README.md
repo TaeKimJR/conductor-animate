@@ -1,5 +1,5 @@
 # Conductor (conductor-animate)
-> Orchestrating complex page layout animations with a flick of your wrist.
+> Orchestrating complex page layout animations with a flick of the wrist.
 
 [![NPM Version][npm-image]][npm-url]
 [![Downloads Stats][npm-downloads]][npm-url]
