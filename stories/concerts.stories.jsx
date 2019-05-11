@@ -117,7 +117,7 @@ storiesOf('Concerts', module)
       },
       Third: {
         animation: 'Fade',
-        delay: 1500,
+        delay: 1000,
       },
     };
 
@@ -127,11 +127,10 @@ storiesOf('Concerts', module)
           <Animated id="First">
             <Shape>
               <Animated id="Second">
-                <Shape color={palette.secondary} size="175px">
-                  <Animated id="Third">
-                    <Shape color={palette.tertiary} size="100px" />
-                  </Animated>
-                </Shape>
+                <Shape color={palette.secondary} size="125px" spacing="35px" />
+              </Animated>
+              <Animated id="Third">
+                <Shape color={palette.tertiary} size="125px" spacing="35px" />
               </Animated>
             </Shape>
           </Animated>
