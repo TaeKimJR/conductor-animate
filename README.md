@@ -5,13 +5,13 @@
 [![Downloads Stats][npm-downloads]][npm-url]
 
 Conductor is a React animation library that makes it easier to coordinate different animations
-across your page layout from a single, simple configuration. You can also create your own custom
-animations and inject them into the Conductor system.
+across your layout from a single, simple configuration. Coordinating complex page layout animations
+is now simple and easy.
 
-Conductor is meant to make complex page layout animations simple and easy.
+We provide some animations out-of-the-box, but the Conductor System is animation-agnostic so you can
+create your own custom animations and inject them in.
 
 ## Installation
-
 npm:
 
 ```sh
