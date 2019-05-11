@@ -1,4 +1,4 @@
-# Conductor
+# Conductor (conductor-animate)
 > Orchestrating complex page layout animations with a flick of your wrist.
 
 [![NPM Version][npm-image]][npm-url]

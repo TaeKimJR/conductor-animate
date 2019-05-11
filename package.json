@@ -1,5 +1,5 @@
 {
-  "name": "composer",
+  "name": "conductor-animate",
   "version": "0.0.1",
   "description": "Orchestrating complex page layout animations with a flick of your wrist.",
   "main": "build/index.js",
@@ -10,22 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TaeKimJR/composer.git"
+    "url": "git+https://github.com/TaeKimJR/conductor-animate.git"
   },
   "sideEffects": false,
   "keywords": [
-    "animations",
-    "react",
-    "composer",
+    "conductor",
+    "conductor-animate",
     "react-transition-group",
-    "animate"
+    "spring",
+    "animate",
+    "animations",
+    "react"
   ],
   "author": "taekimjr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TaeKimJR/composer/issues"
+    "url": "https://github.com/TaeKimJR/conductor-animate/issues"
   },
-  "homepage": "https://github.com/TaeKimJR/composer#readme",
+  "homepage": "https://github.com/TaeKimJR/conductor-animate#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
