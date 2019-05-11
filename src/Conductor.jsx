@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
  *
  * The "animations" prop takes the shape of...
  * {
- *   [animation name]: <ElementType>,
+ *   [animation: string]: ComponentType,
  * }
  *
  * "config" prop
@@ -24,17 +24,15 @@ import PropTypes from 'prop-types';
  * {
  *   [id: string]: {
  *     animation: string,
- *     delay: number,
- *     duration: number,
+ *     [option: string]: any
  *   }
  * }
  *
- * The more advanced usage would be a Function "config" that returns the config for that given
- * Animated wrapper's "id" and "additional". It takes the form of...
+ * For more advanced and complex usages you can use Function "config" that returns the config for
+ * that given Animated wrapper's "id" and "additional". It takes the form of...
  * (id: string, additional: object) => ({
- *   Animation: string,
- *   delay: number,
- *   duration: number,
+ *   animation: string,
+ *   [option: string]: any
  * })
  *
  */
