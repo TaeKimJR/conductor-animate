@@ -8,7 +8,7 @@ Conductor is a React animation library that makes it easier to coordinate differ
 across your page layout from a single, simple configuration. You can also create your own custom
 animations and inject them into the Conductor system.
 
-Conductor is meant to make complex, page layout animations simple and easy.
+Conductor is meant to make complex page layout animations simple and easy.
 
 ## Installation
 
