@@ -241,8 +241,11 @@ its content. This can be done in any way that the Animation chooses.
 </Fade>
 ```
 
-*Common Animation Wrappers*
-- [React Transition Group](https://github.com/reactjs/react-transition-group)
+Conductor is compatible with all Animation libraries! You can build your Animations any way you want
+and orchestrate them with Conductor.
+
+*Common Animation Libs*
+- [react-transition-group](https://github.com/reactjs/react-transition-group)
 - [react-spring](https://www.react-spring.io)
 
 #### Passing options to an Animation
