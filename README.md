@@ -1,2 +1,1 @@
-# conductor
-conduct your animations!
+# Conductor

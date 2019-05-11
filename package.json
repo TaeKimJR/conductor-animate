@@ -1,0 +1,43 @@
+{
+  "name": "composer",
+  "version": "0.0.1",
+  "description": "Compose animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaeKimJR/composer.git"
+  },
+  "keywords": [
+    "animations",
+    "react",
+    "composer",
+    "react-transition-group",
+    "animate"
+  ],
+  "author": "taekimjr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaeKimJR/composer/issues"
+  },
+  "homepage": "https://github.com/TaeKimJR/composer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-transition-group": "^4.0.1"
+  }
+}
