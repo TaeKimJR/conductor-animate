@@ -57,13 +57,86 @@ export default App;
 
 ## Documentation
 ### Conductor
-// TODO
+A provider component that conducts all Animated wrappers within itself by providing directions on
+how to animate. Be sure that your Conductor is placed at the top-level of your Application and
+wraps all Animated wrappers.
 
 #### "animations" prop
-// TODO
+The "animations" prop is a mapping of animations that are used by the Conductor and live within the
+given "config". Be sure to keep this map as narrowed down as possible to avoid bloat within your
+application.
+
+The "animations" prop takes the shape of...
+```
+{
+  [animation: string]: ComponentType,
+}
+```
+- `animation`: The animation name paired with the Animation component.
+
+e.g.
+```javascript
+{
+  Fade: Fade,
+}
+```
 
 #### "config" prop
-// TODO
+The "config" prop defines how each Animated wrapper behaves. The config can be of two types, an
+Object or a Function.
+
+For simple animations, use an object "config". For each Animate nested within the Conductor, you
+will need to specify a configuration for each of their IDs. You will receive an error if you miss
+one!
+
+The "config" prop takes the shape of...
+```
+{
+  [id: string]: {
+    animation: string,
+    [option: string]: any
+  }
+}
+```
+- `id`: The ID of a nested Animated. All Animated wrappers must have an associated config.
+- `animation`: The name that maps directly to an animation in the "animations" mapping.
+- `option`: Additional props that are passed to the Animation. You can define as many options as
+needed.
+
+e.g.
+```javascript
+{
+  HeadingSection: {
+    animation: 'Fade',
+  },
+  ContentSection: {
+    animation: 'Fade',
+    duration: 1000,
+  },
+  FooterSection: {
+    animation: 'Fade',
+    duration: 1000,
+    delay: 500,
+  },
+}
+```
+
+For more advanced and complex usages you can use function "config". The function takes in the
+Animated ID and additional data. It should then return the config for that given Animated wrapper.
+
+The function takes the shape of...
+```
+(id: string, additional: object) => ({
+  animation: string,
+  [option: string]: any
+})
+```
+- `id`: The ID of the Animated component.
+- `additional`: Any additional information that can be passed to identify a specific Animated.
+(e.g. index)
+- `animation`: The name that maps directly to an animation in the "animations" mapping.
+- `option`: Additional props that are passed to the Animation. You can define as many options as
+needed.
 
 ### Animated
 // TODO
@@ -82,9 +155,9 @@ export default App;
 
 ## Release History
 * 1.0.0
-    * The first proper release
+   The first proper release
 * 0.0.1
-    * Work in progress
+   Work in progress
 
 ## Meta
 

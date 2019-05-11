@@ -1,42 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* Conductor
- * Conducts all Animated wrappers within itself by providing directions on how to animate. Be sure
- * that your Conductor is placed at the top-level of your Application and wraps all Animated
- * wrappers.
- *
- * "animations" prop
- * The "animations" prop is a mapping of animations that are used by the Conductor and live within
- * the given "config". Be sure to keep this map as narrowed down as possible to avoid bloat within
- * your application.
- *
- * The "animations" prop takes the shape of...
- * {
- *   [animation: string]: ComponentType,
- * }
- *
- * "config" prop
- * The "config" prop defines how each Animated wrapper behaves. The "config" can be of two types, an
- * Object or a Function.
- *
- * The simplest usage would be an Object "config". It takes the shape of...
- * {
- *   [id: string]: {
- *     animation: string,
- *     [option: string]: any
- *   }
- * }
- *
- * For more advanced and complex usages you can use Function "config" that returns the config for
- * that given Animated wrapper's "id" and "additional". It takes the form of...
- * (id: string, additional: object) => ({
- *   animation: string,
- *   [option: string]: any
- * })
- *
- */
-
 export const CONTEXT_KEY = '_CONDUCTOR_';
 
 const propTypes = {
