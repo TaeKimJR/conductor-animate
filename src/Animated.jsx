@@ -32,10 +32,15 @@ class Animated extends React.PureComponent {
   }
 
   render() {
-    const { children } = this.props;
+    const {
+      children,
+      id,
+      additional,
+      ...rest
+    } = this.props;
     const { Wrapper, options } = this.config;
     return (
-      <Wrapper {...options}>
+      <Wrapper {...rest} {...options}>
         {children}
       </Wrapper>
     );

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { Spring, config as springConfig } from 'react-spring/renderprops';
+import { Spring, Trail, config as springConfig } from 'react-spring/renderprops';
 import Conductor from '../../src/Conductor';
 import Animated from '../../src/Animated';
 
 import Shape from '../helpers/Shape';
 import palette from '../helpers/palette';
 
-// Example of react-spring animation
+// Example of react-spring Spring animation
+// https://www.react-spring.io/docs/props/spring
 const Fade = ({ children, ...rest }) => (
   <Spring
     {...rest}
@@ -23,8 +24,28 @@ Fade.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+// Example of react-spring Trail animation
+// https://www.react-spring.io/docs/props/trail
+const FadeInList = ({ items, ...rest }) => (
+  <Trail
+    {...rest}
+    items={items}
+    keys={item => item.text}
+    from={{ transform: 'translate3d(0,-40px,0)' }}
+    to={{ transform: 'translate3d(0,0px,0)' }}
+  >
+    {item => props => <div style={props}>{item.text}</div>}
+  </Trail>
+);
+FadeInList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+  })).isRequired,
+};
+
 const animations = {
   Fade,
+  FadeInList,
 };
 
 storiesOf('Third Party Concerts/react-spring', module)
@@ -172,6 +193,27 @@ storiesOf('Third Party Concerts/react-spring', module)
             ))
           }
         </div>
+      </Conductor>
+    );
+  })
+  .add('Trailing List', () => {
+    const config = {
+      ListOfItems: {
+        animation: 'FadeInList',
+      },
+    };
+
+    const items = [
+      { text: 'First' },
+      { text: 'Second' },
+      { text: 'Third' },
+    ];
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <Animated id="ListOfItems" items={items}>
+          <Shape />
+        </Animated>
       </Conductor>
     );
   });
