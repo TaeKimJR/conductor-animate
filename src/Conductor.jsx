@@ -55,6 +55,17 @@ class Conductor extends React.PureComponent {
   constructor(props) {
     super(props);
 
+    // Do validation checks in development
+    if (process.env.NODE_ENV !== 'production') {
+      if (!props.config) {
+        throw new Error('You must define a "config" when rendering a Conductor.');
+      }
+
+      if (!props.animations) {
+        throw new Error('You must define a valid "animations" mapping when rendering a Conductor.');
+      }
+    }
+
     this.register = this.register.bind(this);
   }
 
@@ -71,11 +82,36 @@ class Conductor extends React.PureComponent {
 
     // Config can be a function that returns the configuration for that given Animated wrapper
     if (typeof config === 'function') {
-      return config(id, additional);
+      const configuration = config(id, additional);
+
+      // Do validation checks in development
+      if (process.env.NODE_ENV !== 'production') {
+        if (!configuration) {
+          throw new Error(`Unable to find a valid configuration for Animated w/ ID of "${id}". Check your "config" function and ensure it returns a valid animation for this ID.`);
+        }
+      }
+
+      return configuration;
     }
 
-    const { animation, ...options } = config[id];
+    const configuration = config[id];
+
+    // Do validation checks in development
+    if (process.env.NODE_ENV !== 'production') {
+      if (!configuration) {
+        throw new Error(`Unable to find a valid configuration for Animated w/ ID of "${id}". Check your "config" and ensure it has defined an animation for this ID.`);
+      }
+    }
+
+    const { animation, ...options } = configuration;
     const Wrapper = animations[animation];
+
+    // Do validation checks in development
+    if (process.env.NODE_ENV !== 'production') {
+      if (!Wrapper) {
+        throw new Error(`Unable to find a valid Animation w/ name of "${animation}". Check your "animations" mapping and ensure it has defined an animation with this name.`);
+      }
+    }
 
     return {
       Wrapper,

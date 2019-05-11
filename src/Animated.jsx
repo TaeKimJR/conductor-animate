@@ -29,8 +29,18 @@ class Animated extends React.PureComponent {
     super(props);
 
     const { id, additional } = props;
-    // eslint-disable-next-line react/destructuring-assignment
-    this.config = context[CONTEXT_KEY].register(id, additional);
+
+
+    const conductorContext = context[CONTEXT_KEY];
+
+    // Do validation checks in development
+    if (process.env.NODE_ENV !== 'production') {
+      if (!conductorContext) {
+        throw new Error(`Unable to find a Conductor for Animated w/ ID of ${id}. Please ensure that all Animated's are wrapped in a Conductor.`);
+      }
+    }
+
+    this.config = conductorContext.register(id, additional);
   }
 
   render() {
