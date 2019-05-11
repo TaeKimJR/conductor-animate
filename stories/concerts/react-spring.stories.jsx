@@ -26,20 +26,23 @@ Fade.propTypes = {
 
 // Example of react-spring Trail animation
 // https://www.react-spring.io/docs/props/trail
-const FadeInList = ({ items, ...rest }) => (
+const FadeInList = ({ Item, items, ...rest }) => (
   <Trail
     {...rest}
     items={items}
-    keys={item => item.text}
-    from={{ transform: 'translate3d(0,-40px,0)' }}
-    to={{ transform: 'translate3d(0,0px,0)' }}
+    keys={item => item.id}
+    from={{ transform: 'translate3d(0, -400px, 0)' }}
+    to={{ transform: 'translate3d(0, 0px, 0)' }}
+    config={springConfig.molasses}
   >
-    {item => props => <div style={props}>{item.text}</div>}
+    {item => props => <div style={props}><Item color={item.color} /></div>}
   </Trail>
 );
 FadeInList.propTypes = {
+  Item: PropTypes.elementType.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    color: PropTypes.oneOf(Object.values(palette)).isRequired,
   })).isRequired,
 };
 
@@ -204,16 +207,16 @@ storiesOf('Third Party Concerts/react-spring', module)
     };
 
     const items = [
-      { text: 'First' },
-      { text: 'Second' },
-      { text: 'Third' },
+      { id: 'First', color: palette.primary },
+      { id: 'Second', color: palette.secondary },
+      { id: 'Third', color: palette.tertiary },
     ];
 
     return (
       <Conductor config={config} animations={animations}>
-        <Animated id="ListOfItems" items={items}>
-          <Shape />
-        </Animated>
+        <div style={{ display: 'flex', width: '100vw' }}>
+          <Animated id="ListOfItems" Item={Shape} items={items} />
+        </div>
       </Conductor>
     );
   });
