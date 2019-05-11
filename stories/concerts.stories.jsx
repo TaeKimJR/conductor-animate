@@ -137,4 +137,24 @@ storiesOf('Concerts', module)
         </div>
       </Conductor>
     );
+  })
+  .add('index-based Fade w/ delay', () => {
+    const config = (_, { index }) => ({
+      animation: 'Fade',
+      delay: index * 500,
+    });
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ display: 'flex', width: '100vw' }}>
+          {
+            [1, 2, 3, 4, 5].map((_, index) => (
+              <Animated id="First" additional={{ index }}>
+                <Shape />
+              </Animated>
+            ))
+          }
+        </div>
+      </Conductor>
+    );
   });
