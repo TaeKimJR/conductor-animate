@@ -17,8 +17,8 @@ import { Transition } from 'react-transition-group';
  *   exiting, exited)
  *
  * Once extended, the Animation can be configured using these configurable prop
- * - duration: how long the animation should take
- * - delay: how long the animation should wait until starting
+ * - duration: how long the animation should take (ms)
+ * - delay: how long the animation should wait until starting (ms)
  */
 const propTypes = {
   // Instrument Props

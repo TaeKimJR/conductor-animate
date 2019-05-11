@@ -5,6 +5,10 @@ import BaseReactTransitionGroup from './BaseReactTransitionGroup';
 /*
  * Fade
  * Will fade in the contents of the Animated wrapper it is applied to.
+ *
+ * This Animation can be configured with the following props...
+ * - duration: how long the animation should take (ms)
+ * - delay: how long the animation should wait until starting (ms)
  */
 export default props => (
   <BaseReactTransitionGroup
