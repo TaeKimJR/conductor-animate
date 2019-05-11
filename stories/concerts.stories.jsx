@@ -105,4 +105,37 @@ storiesOf('Concerts', module)
         </div>
       </Conductor>
     );
+  })
+  .add('2-step Fade', () => {
+    const config = {
+      First: {
+        animation: 'Fade',
+      },
+      Second: {
+        animation: 'Fade',
+        delay: 1000,
+      },
+      Third: {
+        animation: 'Fade',
+        delay: 1500,
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ display: 'flex', width: '100vw' }}>
+          <Animated id="First">
+            <Shape>
+              <Animated id="Second">
+                <Shape color={palette.secondary} size="175px">
+                  <Animated id="Third">
+                    <Shape color={palette.tertiary} size="100px" />
+                  </Animated>
+                </Shape>
+              </Animated>
+            </Shape>
+          </Animated>
+        </div>
+      </Conductor>
+    );
   });
