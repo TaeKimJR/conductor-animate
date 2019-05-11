@@ -27,7 +27,8 @@ yarn add conductor-animate
 ## Basic Usage
 ```javascript
 import React from 'react';
-import { Conductor, Animated, Fade } from 'conductor';
+import { Conductor, Animated } from 'conductor-animate';
+import { Fade } from 'conductor-animate/animations';
 
 // Define the Animation mapping
 const animations = { Fade };
