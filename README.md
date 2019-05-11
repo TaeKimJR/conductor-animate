@@ -56,6 +56,9 @@ const App = () => {
 export default App;
 ```
 
+## Demos
+Checkout our [Storybook](https://taekimjr.github.io/conductor-animate/) for some live demos!
+
 ## Documentation
 ### Conductor
 A Provider component that conducts all nested Animated wrappers by providing directions on how to
@@ -292,4 +295,9 @@ git push origin master v1.2.3
 3. Publish
 ```
 npm publish
+```
+
+4. Deploy the latest Storybook
+```
+npm run deploy-storybook
 ```
