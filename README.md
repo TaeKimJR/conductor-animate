@@ -42,7 +42,7 @@ const config = {
 };
 
 const App = () => {
-  // Render the Page w/ the Conductor and Animated Section
+  // Render the Page w/ the Conductor and Animated
   return (
     <Conductor animations={animations} config={config}>
       <Animated id="HeaderSection">
@@ -238,10 +238,10 @@ its content. This can be done in any way that the Animation chooses.
 
 *Common Animation Wrappers*
 - [React Transition Group](https://github.com/reactjs/react-transition-group)
--
+- [react-spring](https://www.react-spring.io)
 
 #### Passing options to an Animation
-The Animation will receive any additional options that are defined in the "config". For example, if
+The Animation can receive any additional options that are defined in the "config". For example, if
 you have the following config...
 
 ```javascript
