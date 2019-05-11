@@ -274,8 +274,8 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/conductor-animate.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/conductor-animate
+[npm-downloads]: https://img.shields.io/npm/dm/conductor-animate.svg?style=flat-square
 
 
