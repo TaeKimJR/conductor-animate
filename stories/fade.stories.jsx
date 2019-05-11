@@ -80,6 +80,21 @@ storiesOf('Fade', module)
       </Conductor>
     );
   })
+  .add('Fade w/ function config', () => {
+    const config = () => ({
+      animation: 'Fade',
+    });
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <Animated id="OnlyAnimated">
+          <div>
+            Violins
+          </div>
+        </Animated>
+      </Conductor>
+    );
+  })
   .add('Fade x3', () => {
     const config = {
       FirstAnimated: {

@@ -22,17 +22,19 @@ import PropTypes from 'prop-types';
  *
  * The simplest usage would be an Object "config". It takes the shape of...
  * {
- *   [id]: {
- *     animation: <string>,
- *     delay: <number>,
- *     duration: <number>,
+ *   [id: string]: {
+ *     animation: string,
+ *     delay: number,
+ *     duration: number,
  *   }
  * }
  *
- * The more advanced usage would be a Function "config". It takes the form of...
- * (id, additional) => ({
- *   Wrapper: <ElementType>,
- *   options: <Object>
+ * The more advanced usage would be a Function "config" that returns the config for that given
+ * Animated wrapper's "id" and "additional". It takes the form of...
+ * (id: string, additional: object) => ({
+ *   Animation: string,
+ *   delay: number,
+ *   duration: number,
  * })
  *
  */
@@ -55,7 +57,7 @@ class Conductor extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    // Do validation checks in development
+    // Validation Check
     if (process.env.NODE_ENV !== 'production') {
       if (!props.config) {
         throw new Error('You must define a "config" when rendering a Conductor.');
@@ -80,23 +82,9 @@ class Conductor extends React.PureComponent {
   register(id, additional) {
     const { config, animations } = this.props;
 
-    // Config can be a function that returns the configuration for that given Animated wrapper
-    if (typeof config === 'function') {
-      const configuration = config(id, additional);
+    const configuration = (typeof config === 'function') ? config(id, additional) : config[id];
 
-      // Do validation checks in development
-      if (process.env.NODE_ENV !== 'production') {
-        if (!configuration) {
-          throw new Error(`Unable to find a valid configuration for Animated w/ ID of "${id}". Check your "config" function and ensure it returns a valid animation for this ID.`);
-        }
-      }
-
-      return configuration;
-    }
-
-    const configuration = config[id];
-
-    // Do validation checks in development
+    // Validation Check
     if (process.env.NODE_ENV !== 'production') {
       if (!configuration) {
         throw new Error(`Unable to find a valid configuration for Animated w/ ID of "${id}". Check your "config" and ensure it has defined an animation for this ID.`);
@@ -106,7 +94,7 @@ class Conductor extends React.PureComponent {
     const { animation, ...options } = configuration;
     const Wrapper = animations[animation];
 
-    // Do validation checks in development
+    // Validation Check
     if (process.env.NODE_ENV !== 'production') {
       if (!Wrapper) {
         throw new Error(`Unable to find a valid Animation w/ name of "${animation}". Check your "animations" mapping and ensure it has defined an animation with this name.`);

@@ -33,7 +33,7 @@ class Animated extends React.PureComponent {
 
     const conductorContext = context[CONTEXT_KEY];
 
-    // Do validation checks in development
+    // Validation Check
     if (process.env.NODE_ENV !== 'production') {
       if (!conductorContext) {
         throw new Error(`Unable to find a Conductor for Animated w/ ID of ${id}. Please ensure that all Animated's are wrapped in a Conductor.`);
