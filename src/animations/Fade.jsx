@@ -4,7 +4,7 @@ import BaseReactTransitionGroup from './BaseReactTransitionGroup';
 
 /*
  * Fade
- * Will fade in the contents of the Member it is applied to.
+ * Will fade in the contents of the Animated wrapper it is applied to.
  */
 export default props => (
   <BaseReactTransitionGroup

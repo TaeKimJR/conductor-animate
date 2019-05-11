@@ -1,9 +1,9 @@
 import Conductor from './Conductor';
-import Member from './Animated';
+import Animated from './Animated';
 import Fade from './animations/Fade';
 
 export {
   Conductor,
-  Member,
+  Animated,
   Fade,
 };

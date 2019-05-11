@@ -4,9 +4,10 @@ import { Transition } from 'react-transition-group';
 
 /*
  * Base React Transition Group
- *
- * Use this as a base for React Transition Group animations.
+ * Use this as a base for React Transition Group animations using the transition CSS property.
  * https://reactcommunity.org/react-transition-group/transition
+ *
+ * For clean animations, only animate position, scale, rotation, and opacity.
  *
  * You can extend this base by passing the following props (see Fade.jsx)
  * - timingFunction: how intermediate values are calculated during the animation (e.g. ease-in-out)
