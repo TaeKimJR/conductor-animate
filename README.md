@@ -197,13 +197,15 @@ from the Conductor on which Animation to use and how to use it.
 
 #### "id" prop
 Each Animated wrapper must be given an "id" prop. The ID must have an associated configuration in
-the "config" provided to the Conductor.
+the "config".
 
 *Shape*
-String
+
+`String`
 
 *Example*
-"HeadingSection"
+
+`"HeadingSection"`
 
 #### "additional" prop
 When the "config" provided to the Conductor is a function, you can pass additional information about
@@ -223,17 +225,37 @@ an Animated wrapper through the "additional" prop. The "config" function can use
 }
 ```
 
-### Animations
-// TODO
+### Animation
+Within the Conductor System, an Animation is a wrapper component that applies some styles/logic to
+its content. This can be done in any way that the Animation chooses.
 
-#### Creating your own Animation
-// TODO
+*Example*
+```javascript
+<Fade duration={1500} delay={500}>
+  <div>I WILL ANIMATE!!!</div>
+</Fade>
+```
 
-## Release History
-* 1.0.0
-   The first proper release
-* 0.0.1
-   Work in progress
+*Common Animation Wrappers*
+- [React Transition Group](https://github.com/reactjs/react-transition-group)
+-
+
+#### Passing options to an Animation
+The Animation will receive any additional options that are defined in the "config". For example, if
+you have the following config...
+
+```javascript
+{
+  animation: 'Fade',
+  duration: 1500,
+  delay: 500,
+}
+```
+
+`duration` and `delay` are additional options and will be passed to the `Fade` animation like so...
+```javascript
+<Fade duration={1500} delay={500}>
+```
 
 ## Meta
 
