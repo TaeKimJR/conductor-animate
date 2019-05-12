@@ -12,7 +12,7 @@ const animations = {
 };
 
 storiesOf('Concert', module)
-  .add('Basic Fade', () => {
+  .add('Unison Fade', () => {
     const config = {
       First: {
         animation: 'Fade',
@@ -139,7 +139,7 @@ storiesOf('Concert', module)
       </Conductor>
     );
   })
-  .add('index-based Fade w/ delay', () => {
+  .add('List Fade', () => {
     const config = (_, { index }) => ({
       animation: 'Fade',
       delay: index * 500,

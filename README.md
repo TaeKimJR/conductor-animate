@@ -249,7 +249,7 @@ its content. This can be done in any way that the Animation chooses.
 Conductor is compatible with all Animation libraries as long as it animates using a wrapper
 component.
 
-*Common Animation Libs*
+*Common Animation Libraries*
 - [react-transition-group](https://github.com/reactjs/react-transition-group)
 - [react-spring](https://www.react-spring.io)
 - [react-animations](http://react-animations.herokuapp.com/)
