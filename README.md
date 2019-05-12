@@ -60,6 +60,8 @@ export default App;
 ## Demos
 Checkout our [Storybook](https://taekimjr.github.io/conductor-animate/) for some live demos!
 
+![](./assets/conductor_demo.gif)
+
 ## Documentation
 ### Conductor
 A Provider component that conducts all nested Animated wrappers by providing directions on how to
