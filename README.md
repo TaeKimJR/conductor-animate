@@ -101,6 +101,7 @@ animations to your app.
 ```javascript
 {
   Fade: Fade,
+  Slide: Slide,
   CustomAnimation: CustomAnimation,
 }
 ```
