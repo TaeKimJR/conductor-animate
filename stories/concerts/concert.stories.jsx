@@ -2,13 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Conductor from '../../src/Conductor';
 import Animated from '../../src/Animated';
-import { Fade, Flip, Slide } from '../../src/animations';
+import {
+  Fade, Flip, Shrink, Slide,
+} from '../../src/animations';
 import Shape from '../helpers/Shape';
 import palette from '../helpers/palette';
 
 const animations = {
   Fade,
   Flip,
+  Shrink,
   Slide,
 };
 
@@ -220,6 +223,48 @@ storiesOf('Concert', module)
           <Animated id="Third">
             <Shape color={palette.tertiary} />
           </Animated>
+        </div>
+      </Conductor>
+    );
+  })
+  .add('Magnetics', () => {
+    const config = {
+      First: {
+        animation: 'Shrink',
+      },
+      Second: {
+        animation: 'Shrink',
+        delay: 300,
+      },
+      Third: {
+        animation: 'Shrink',
+        delay: 600,
+      },
+      Fourth: {
+        animation: 'Shrink',
+        delay: 900,
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ width: '750px' }}>
+          <div style={{ display: 'flex' }}>
+            <Animated id="First">
+              <Shape />
+            </Animated>
+            <Animated id="Second">
+              <Shape color={palette.secondary} />
+            </Animated>
+          </div>
+          <div style={{ display: 'flex' }}>
+            <Animated id="Third">
+              <Shape color={palette.tertiary} />
+            </Animated>
+            <Animated id="Fourth">
+              <Shape color={palette.dark} />
+            </Animated>
+          </div>
         </div>
       </Conductor>
     );

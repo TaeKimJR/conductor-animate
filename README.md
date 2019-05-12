@@ -102,6 +102,7 @@ unnecessary animations to your app.
 {
   Fade: Fade,
   Flip: Flip,
+  Shrink: Shrink,
   Slide: Slide,
   CustomAnimation: CustomAnimation,
 }
@@ -311,7 +312,7 @@ Example Config
 
 *Flip* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Flip.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-flip--flip))
 
-Rotates the content in (similar to flipping a coin)
+Rotates the content in (similar to flipping a coin).
 
 Options
 - `duration`: how long the animation should take (ms)
@@ -321,6 +322,23 @@ Example Config
 ```
 {
   animation: 'Flip',
+  duration: 5000,
+  delay: 1000,
+}
+```
+
+*Flip* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Shrink.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-shrink--shrink))
+
+Shrinks the content into position.
+
+Options
+- `duration`: how long the animation should take (ms)
+- `delay`: how long the animation should wait until starting (ms)
+
+Example Config
+```
+{
+  animation: 'Shrink',
   duration: 5000,
   delay: 1000,
 }
