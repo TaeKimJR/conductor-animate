@@ -366,9 +366,9 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 [npm-downloads]: https://img.shields.io/npm/dm/conductor-animate.svg?style=flat-square
 
 ## Publishing a new version to NPM
-1. Update version in package.json ([semver](https://semver.org/)) and commit to master
+1. Update version in package.json ([semver](https://semver.org/))
 ```
-"version": "1.2.3",
+npm version 1.2.3
 ```
 2. Tag the release
 ```
