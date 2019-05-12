@@ -17,31 +17,31 @@ export default props => (
     initialStyles={{
       opacity: 0,
       WebkitTransform: 'translateX(200px)',
-      MsTransform: 'translateX(200px)',
+      msTransform: 'translateX(200px)',
       transform: 'translateX(200px)',
     }}
     transitionStyles={{
       entering: {
         WebkitTransform: 'translateX(0)',
-        MsTransform: 'translateX(0)',
+        msTransform: 'translateX(0)',
         transform: 'translateX(0)',
         opacity: 1,
       },
       entered: {
         WebkitTransform: 'translateX(0)',
-        MsTransform: 'translateX(0)',
+        msTransform: 'translateX(0)',
         transform: 'translateX(0)',
         opacity: 1,
       },
       exiting: {
         WebkitTransform: 'translateX(200px)',
-        MsTransform: 'translateX(200px)',
+        msTransform: 'translateX(200px)',
         transform: 'translateX(200px)',
         opacity: 0,
       },
       exited: {
         WebkitTransform: 'translateX(200px)',
-        MsTransform: 'translateX(200px)',
+        msTransform: 'translateX(200px)',
         transform: 'translateX(200px)',
         opacity: 0,
       },

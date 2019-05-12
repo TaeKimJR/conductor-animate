@@ -2,12 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Conductor from '../../src/Conductor';
 import Animated from '../../src/Animated';
-import { Fade, Slide } from '../../src/animations';
+import { Fade, Flip, Slide } from '../../src/animations';
 import Shape from '../helpers/Shape';
 import palette from '../helpers/palette';
 
 const animations = {
   Fade,
+  Flip,
   Slide,
 };
 
@@ -159,7 +160,7 @@ storiesOf('Concert', module)
       </Conductor>
     );
   })
-  .add('Section Slide In', () => {
+  .add('Cascading Slide', () => {
     const config = {
       First: {
         animation: 'Slide',
@@ -187,6 +188,25 @@ storiesOf('Concert', module)
           <Animated id="Third">
             <Shape color={palette.tertiary} />
           </Animated>
+        </div>
+      </Conductor>
+    );
+  })
+  .add('Poster Child', () => {
+    const config = {
+      Second: {
+        animation: 'Flip',
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ width: '100vw' }}>
+          <Shape />
+          <Animated id="Second">
+            <Shape color={palette.secondary} />
+          </Animated>
+          <Shape color={palette.tertiary} />
         </div>
       </Conductor>
     );

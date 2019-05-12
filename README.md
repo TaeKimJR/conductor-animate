@@ -291,7 +291,7 @@ Example Config
 }
 ```
 
-*Slide ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))*
+*Slide* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))
 
 Slides the content in.
 
@@ -303,6 +303,23 @@ Example Config
 ```
 {
   animation: 'Slide',
+  duration: 5000,
+  delay: 1000,
+}
+```
+
+*Flip* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Flip.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-flip--flip))
+
+Rotates the content in (similar to flipping a coin)
+
+Options
+- `duration`: how long the animation should take (ms)
+- `delay`: how long the animation should wait until starting (ms)
+
+Example Config
+```
+{
+  animation: 'Flip',
   duration: 5000,
   delay: 1000,
 }
