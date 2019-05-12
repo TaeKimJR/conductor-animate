@@ -2,12 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Conductor from '../../src/Conductor';
 import Animated from '../../src/Animated';
-import Fade from '../../src/animations/Fade';
+import { Fade, Slide } from '../../src/animations';
 import Shape from '../helpers/Shape';
 import palette from '../helpers/palette';
 
 const animations = {
   Fade,
+  Slide,
 };
 
 storiesOf('Concert', module)
@@ -154,6 +155,38 @@ storiesOf('Concert', module)
               </Animated>
             ))
           }
+        </div>
+      </Conductor>
+    );
+  })
+  .add('Section Slide In', () => {
+    const config = {
+      First: {
+        animation: 'Slide',
+        delay: 0,
+      },
+      Second: {
+        animation: 'Slide',
+        delay: 500,
+      },
+      Third: {
+        animation: 'Slide',
+        delay: 1000,
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ width: '100vw' }}>
+          <Animated id="First">
+            <Shape />
+          </Animated>
+          <Animated id="Second">
+            <Shape color={palette.secondary} />
+          </Animated>
+          <Animated id="Third">
+            <Shape color={palette.tertiary} />
+          </Animated>
         </div>
       </Conductor>
     );
