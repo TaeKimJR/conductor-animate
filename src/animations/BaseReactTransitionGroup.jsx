@@ -8,6 +8,7 @@ import { Transition } from 'react-transition-group';
  * https://reactcommunity.org/react-transition-group/transition
  *
  * For clean animations, only animate position, scale, rotation, and opacity.
+ * https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
  *
  * You can extend this base by passing the following props (see Fade.jsx)
  * - timingFunction: how intermediate values are calculated during the animation (e.g. ease-in-out)
