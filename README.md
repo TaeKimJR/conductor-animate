@@ -4,6 +4,7 @@
 [![NPM Version][npm-image]][npm-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 [![Minified Size](https://badgen.net/bundlephobia/min/conductor-animate)](https://bundlephobia.com/result?p=conductor-animate)
+[![MinZipped Size](https://badgen.net/bundlephobia/minzip/conductor-animate)](https://bundlephobia.com/result?p=conductor-animate)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://taekimjr.github.io/conductor-animate/)
 
 Conductor is a React animation library that makes it easier to coordinate different animations
