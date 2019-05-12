@@ -245,15 +245,16 @@ its content. This can be done in any way that the Animation chooses.
 </Fade>
 ```
 
-Conductor is compatible with all Animation libraries as long as it animates via a wrapper component.
+Conductor is compatible with all Animation libraries as long as it animates using a wrapper
+component.
 
 *Common Animation Libs*
 - [react-transition-group](https://github.com/reactjs/react-transition-group)
 - [react-spring](https://www.react-spring.io)
 - [react-animations](http://react-animations.herokuapp.com/)
 
-#### Passing options to an Animation
-The Animation can receive any additional options that are defined in the "config". For example, if
+#### Passing props to an Animation
+The Animation can receive additional options that are defined in the "config". For example, if
 you have the following config...
 
 ```javascript
@@ -264,7 +265,7 @@ you have the following config...
 }
 ```
 
-`duration` and `delay` are additional options and will be passed to the `Fade` animation like so...
+`duration` and `delay` are additional options and will be passed to the `Fade` Animation as props like so...
 ```javascript
 <Fade duration={1500} delay={500}>
 ```
@@ -273,6 +274,7 @@ you have the following config...
 The Conductor library ships with some Animations that you can use directly.
 
 *Fade ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Fade.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-fade--fade))*
+
 Fades the content in.
 
 Options
@@ -282,13 +284,14 @@ Options
 Example Config
 ```
 {
-  type: 'Fade',
+  animation: 'Fade',
   duration: 5000,
   delay: 1000,
 }
 ```
 
 *Slide ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))*
+
 Slides the content in.
 
 Options
@@ -298,7 +301,7 @@ Options
 Example Config
 ```
 {
-  type: 'Slide',
+  animation: 'Slide',
   duration: 5000,
   delay: 1000,
 }
