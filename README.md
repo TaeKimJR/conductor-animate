@@ -370,10 +370,12 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 ```
 npm version 1.2.3
 ```
+
 2. Push to master
 ```
 git push origin master v1.2.3
 ```
+
 3. Publish
 ```
 npm publish
