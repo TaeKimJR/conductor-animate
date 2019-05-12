@@ -194,19 +194,32 @@ storiesOf('Concert', module)
   })
   .add('Poster Child', () => {
     const config = {
+      First: {
+        animation: 'Fade',
+        delay: 1000,
+      },
       Second: {
         animation: 'Flip',
+        duration: 1000,
+      },
+      Third: {
+        animation: 'Fade',
+        delay: 1000,
       },
     };
 
     return (
       <Conductor config={config} animations={animations}>
-        <div style={{ width: '100vw' }}>
-          <Shape />
+        <div style={{ display: 'flex', width: '100vw' }}>
+          <Animated id="First">
+            <Shape />
+          </Animated>
           <Animated id="Second">
             <Shape color={palette.secondary} />
           </Animated>
-          <Shape color={palette.tertiary} />
+          <Animated id="Third">
+            <Shape color={palette.tertiary} />
+          </Animated>
         </div>
       </Conductor>
     );
