@@ -65,7 +65,7 @@ Checkout our [Storybook](https://taekimjr.github.io/conductor-animate/) for some
 ![](./assets/conductor_demo.gif)
 
 ## Documentation
-### Conductor
+### Conductor ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/Conductor.jsx))
 A Provider component that conducts all nested Animated wrappers by providing directions on how to
 animate. Be sure that your Conductor wraps all Animated wrappers that you are expecting to conduct.
 
@@ -187,7 +187,7 @@ needed.
 
 ```
 
-### Animated
+### Animated ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/Animated.jsx))
 A wrapper component that will apply an animation to its inner contents. It will receive directions
 from the Conductor on which Animation to use and how to use it.
 
@@ -245,8 +245,7 @@ its content. This can be done in any way that the Animation chooses.
 </Fade>
 ```
 
-Conductor is compatible with all Animation libraries! You can build your Animations any way you want
-and orchestrate them with Conductor.
+Conductor is compatible with all Animation libraries as long as it animates via a wrapper component.
 
 *Common Animation Libs*
 - [react-transition-group](https://github.com/reactjs/react-transition-group)
@@ -268,6 +267,41 @@ you have the following config...
 `duration` and `delay` are additional options and will be passed to the `Fade` animation like so...
 ```javascript
 <Fade duration={1500} delay={500}>
+```
+
+#### Out-Of-The-Box Animations ([source](https://github.com/TaeKimJR/conductor-animate/tree/master/src/animations))
+The Conductor library ships with some Animations that you can use directly.
+
+*Fade ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Fade.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-fade--fade))*
+Fades the content in.
+
+Options
+- `duration`: how long the animation should take (ms)
+- `delay`: how long the animation should wait until starting (ms)
+
+Example Config
+```
+{
+  type: 'Fade',
+  duration: 5000,
+  delay: 1000,
+}
+```
+
+*Slide ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))*
+Slides the content in.
+
+Options
+- `duration`: how long the animation should take (ms)
+- `delay`: how long the animation should wait until starting (ms)
+
+Example Config
+```
+{
+  type: 'Slide',
+  duration: 5000,
+  delay: 1000,
+}
 ```
 
 ## Meta
