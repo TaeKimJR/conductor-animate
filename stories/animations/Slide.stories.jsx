@@ -9,7 +9,7 @@ storiesOf('Animations/Slide', module)
       <Shape />
     </Slide>
   ))
-  .add('Slide w/ Duration (long)', () => (
+  .add('Slide w/ Duration', () => (
     <Slide duration={5000}>
       <Shape />
     </Slide>
