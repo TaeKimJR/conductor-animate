@@ -7,12 +7,13 @@
 [![MinZipped Size](https://badgen.net/bundlephobia/minzip/conductor-animate)](https://bundlephobia.com/result?p=conductor-animate)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://taekimjr.github.io/conductor-animate/)
 
-Conductor is a React animation library that makes it easier to coordinate different animations
-across your layout from a single, simple configuration. Coordinating complex page layout animations
-is now simple and easy.
+Conductor is a React animation library that makes it easier to coordinate animations across your
+layout from a single, simple configuration. Coordinating complex page layout animations is now
+simple and easy.
 
-We provide some animations out-of-the-box, but the Conductor System is animation-agnostic so you can
-create your own custom animations and inject them in.
+We provide some animations [out-of-the-box](#out-of-the-box-animations-source), but the Conductor
+System is animation library-agnostic so you can create your own custom animations and inject them
+in.
 
 ## Installation
 npm:
@@ -59,15 +60,17 @@ const App = () => {
 export default App;
 ```
 
+![](./assets/header-fade.gif)
+
 ## Demos
-Checkout our [Storybook](https://taekimjr.github.io/conductor-animate/) for some live demos!
+Checkout our [Storybook](https://taekimjr.github.io/conductor-animate/) for live demos!
 
 ![](./assets/conductor_demo.gif)
 
 ## Documentation
 ### Conductor ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/Conductor.jsx))
-A Provider component that conducts all nested Animated wrappers by providing directions on how to
-animate. Be sure that your Conductor wraps all Animated wrappers that you are expecting to conduct.
+Conducts all nested Animated wrappers by providing directions on how to animate. Be sure that your
+Conductor wraps all Animated wrappers that you are expecting to animate.
 
 *Example*
 ```javascript
@@ -87,7 +90,8 @@ animate. Be sure that your Conductor wraps all Animated wrappers that you are ex
 #### "animations" prop
 The "animations" prop is a mapping of animations that are used by the Conductor and live within the
 given "config". Be sure to keep this map as narrowed down as much as possible to avoid shipping
-unnecessary animations to your app.
+unnecessary animations to your app. We also recommend creating this mapping outside of your render
+method to cut down on re-renders.
 
 *Shape*
 ```
@@ -109,13 +113,13 @@ unnecessary animations to your app.
 ```
 
 #### "config" prop
-The "config" prop defines how each Animated wrapper behaves. The config can be of two types, an
-Object or a Function.
+The "config" prop defines the directions for how each Animated wrapper should animate. The config
+can be of two types, an object or a function.
 
 ##### Simple (object)
-For *simple animations*, use an object "config". For each Animate nested within the Conductor, you
-will need to specify a configuration for each of their IDs. You will receive an error if you miss
-one!
+For simple, straightforward animations, use an object "config". For each Animate wrapper nested
+within the Conductor, you will need to specify a configuration for all IDs. You will receive an
+error if you miss one!
 
 *Shape*
 ```
@@ -128,8 +132,8 @@ one!
 ```
 - `id`: The ID of a nested Animated. All Animated wrappers must have an associated config.
 - `animation`: The name that maps directly to an animation in the "animations" mapping.
-- `option`: Additional props that are passed to the Animation. You can define as many options as
-needed/allowed by the Animation.
+- `option`: Additional props that are passed to the Animation. You can define as many options as are
+required/allowed by the Animation.
 
 *Example*
 ```javascript
@@ -150,8 +154,8 @@ needed/allowed by the Animation.
 ```
 
 ##### Advanced (function)
-For more *advanced and complex* animations, you can use function "config". The function takes in the
-Animated ID and additional data. It should then return the config for that given Animated wrapper.
+For advanced and complex animations, you can use a function "config". The function takes in the
+Animated ID and additional data and should then return the config for that given Animated wrapper.
 
 *Shape*
 ```
@@ -163,7 +167,7 @@ Animated ID and additional data. It should then return the config for that given
 - `id`: The ID of the Animated component.
 - `additional`: Any additional information that can be passed to identify a specific Animated.
 (e.g. index)
-- `animation`: The name that maps directly to an animation in the "animations" mapping.
+- `animation`: The name that maps directly to an Animation in the "animations" mapping.
 - `option`: Additional props that are passed to the Animation. You can define as many options as
 needed.
 
@@ -252,9 +256,9 @@ Conductor is compatible with all Animation libraries as long as it animates usin
 component.
 
 *Common Animation Libraries*
-- [react-transition-group](https://github.com/reactjs/react-transition-group)
-- [react-spring](https://www.react-spring.io)
-- [react-animations](http://react-animations.herokuapp.com/)
+- [react-transition-group](https://github.com/reactjs/react-transition-group) ([demo](https://taekimjr.github.io/conductor-animate/?path=/story/concert--unison))
+- [react-spring](https://www.react-spring.io) ([demo](https://taekimjr.github.io/conductor-animate/?path=/story/third-party-concerts-react-spring--basic-fade))
+- [react-animations](http://react-animations.herokuapp.com/) ([demo](https://taekimjr.github.io/conductor-animate/?path=/story/third-party-concerts-react-animations--basic-fade))
 
 #### Passing props to an Animation
 The Animation can receive additional options that are defined in the "config". For example, if
@@ -276,7 +280,7 @@ you have the following config...
 #### Out-Of-The-Box Animations ([source](https://github.com/TaeKimJR/conductor-animate/tree/master/src/animations))
 The Conductor library ships with some Animations that you can use directly.
 
-*Fade ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Fade.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-fade--fade))*
+**Fade** ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Fade.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-fade--fade))
 
 Fades the content in.
 
@@ -293,7 +297,7 @@ Example Config
 }
 ```
 
-*Slide* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))
+**Slide** ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Slide.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-slide--slide))
 
 Slides the content in.
 
@@ -310,7 +314,7 @@ Example Config
 }
 ```
 
-*Flip* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Flip.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-flip--flip))
+**Flip** ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Flip.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-flip--flip))
 
 Rotates the content in (similar to flipping a coin).
 
@@ -327,7 +331,7 @@ Example Config
 }
 ```
 
-*Flip* ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Shrink.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-shrink--shrink))
+**Shrink** ([source](https://github.com/TaeKimJR/conductor-animate/blob/master/src/animations/Shrink.jsx), [demo](https://taekimjr.github.io/conductor-animate/?path=/story/animations-shrink--shrink))
 
 Shrinks the content into position.
 
