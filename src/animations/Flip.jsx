@@ -16,14 +16,36 @@ export default props => (
     transition="transform"
     initialStyles={{
       opacity: 0,
-      transform: 'rotate3d(1, 0, 0, 90deg)',
       transformOrigin: 'center',
+      WebkitTransform: 'rotate3d(1, 0, 0, 90deg)',
+      msTransform: 'rotate3d(1, 0, 0, 90deg)',
+      transform: 'rotate3d(1, 0, 0, 90deg)',
     }}
     transitionStyles={{
-      entering: { opacity: 1, transform: 'rotate3d(0, 0, 0, 0)' },
-      entered: { opacity: 1, transform: 'rotate3d(0, 0, 0, 0)' },
-      exiting: { opacity: 0, transform: 'rotate3d(1, 0, 0, 90deg)' },
-      exited: { opacity: 0, transform: 'rotate3d(1, 0, 0, 90deg)' },
+      entering: {
+        opacity: 1,
+        WebkitTransform: 'rotate3d(0, 0, 0, 0)',
+        msTransform: 'rotate3d(0, 0, 0, 0)',
+        transform: 'rotate3d(0, 0, 0, 0)',
+      },
+      entered: {
+        opacity: 1,
+        WebkitTransform: 'rotate3d(0, 0, 0, 0)',
+        msTransform: 'rotate3d(0, 0, 0, 0)',
+        transform: 'rotate3d(0, 0, 0, 0)',
+      },
+      exiting: {
+        opacity: 0,
+        WebkitTransform: 'rotate3d(1, 0, 0, 90deg)',
+        msTransform: 'rotate3d(1, 0, 0, 90deg)',
+        transform: 'rotate3d(1, 0, 0, 90deg)',
+      },
+      exited: {
+        opacity: 0,
+        WebkitTransform: 'rotate3d(1, 0, 0, 90deg)',
+        msTransform: 'rotate3d(1, 0, 0, 90deg)',
+        transform: 'rotate3d(1, 0, 0, 90deg)',
+      },
     }}
   />
 );
