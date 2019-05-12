@@ -86,8 +86,8 @@ animate. Be sure that your Conductor wraps all Animated wrappers that you are ex
 
 #### "animations" prop
 The "animations" prop is a mapping of animations that are used by the Conductor and live within the
-given "config". Be sure to keep this map as narrowed down as possible to avoid shipping unnecessary
-animations to your app.
+given "config". Be sure to keep this map as narrowed down as much as possible to avoid shipping
+unnecessary animations to your app.
 
 *Shape*
 ```
