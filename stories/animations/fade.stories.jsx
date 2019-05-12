@@ -9,13 +9,8 @@ storiesOf('Animations/Fade', module)
       <Shape />
     </Fade>
   ))
-  .add('Fade w/ Duration (long)', () => (
-    <Fade duration={10000}>
-      <Shape />
-    </Fade>
-  ))
-  .add('Fade w/ Duration (short)', () => (
-    <Fade duration={250}>
+  .add('Fade w/ Duration', () => (
+    <Fade duration={5000}>
       <Shape />
     </Fade>
   ))

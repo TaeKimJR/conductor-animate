@@ -3,7 +3,7 @@ import BaseReactTransitionGroup from './BaseReactTransitionGroup';
 
 /*
  * Slide
- * Will slide in the contents of the Animated wrapper it is applied to.
+ * Will slide + fade in the contents of the Animated wrapper it is applied to.
  *
  * This Animation can be configured with the following props...
  * - duration: how long the animation should take (ms)
@@ -13,15 +13,16 @@ export default props => (
   <BaseReactTransitionGroup
     {...props}
     timingFunction="ease-in-out"
-    transition="transform"
+    transition={['transform', 'opacity']}
     initialStyles={{
-      transform: 'translateX(100%)',
+      opacity: 0,
+      transform: 'translateX(200px)',
     }}
     transitionStyles={{
-      entering: { transform: 'translateX(0)' },
-      entered: { transform: 'translateX(0)' },
-      exiting: { transform: 'translateX(100%)' },
-      exited: { transform: 'translateX(100%)' },
+      entering: { transform: 'translateX(0)', opacity: 1 },
+      entered: { transform: 'translateX(0)', opacity: 1 },
+      exiting: { transform: 'translateX(200px)', opacity: 0 },
+      exited: { transform: 'translateX(200px)', opacity: 0 },
     }}
   />
 );
