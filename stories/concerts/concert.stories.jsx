@@ -300,4 +300,43 @@ storiesOf('Concert', module)
         </div>
       </Conductor>
     );
+  })
+  .add('Newsfeed', () => {
+    const config = {
+      First: {
+        animation: 'Flip',
+        duration: 1000,
+      },
+      Second: {
+        animation: 'Slide',
+        delay: 1000,
+      },
+      Third: {
+        animation: 'Slide',
+        delay: 1500,
+      },
+      Fourth: {
+        animation: 'Slide',
+        delay: 2000,
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ width: '750px' }}>
+          <Animated id="First">
+            <Shape />
+          </Animated>
+          <Animated id="Second">
+            <Shape color={palette.secondary} />
+          </Animated>
+          <Animated id="Third">
+            <Shape color={palette.tertiary} />
+          </Animated>
+          <Animated id="Fourth">
+            <Shape color={palette.dark} />
+          </Animated>
+        </div>
+      </Conductor>
+    );
   });
