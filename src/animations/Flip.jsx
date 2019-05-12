@@ -13,7 +13,7 @@ export default props => (
   <BaseReactTransitionGroup
     {...props}
     timingFunction="ease-in-out"
-    transition="transform"
+    transition={['transform', 'opacity']}
     initialStyles={{
       opacity: 0,
       transformOrigin: 'center',
