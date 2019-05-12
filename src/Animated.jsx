@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { contextTypes, CONTEXT_KEY } from './Conductor';
 
 const propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   id: PropTypes.string.isRequired,
   additional: PropTypes.shape({}),
 };
 
 const defaultProps = {
+  children: null,
   additional: {},
 };
 

@@ -51,18 +51,27 @@ class BaseReactTransitionGroup extends React.PureComponent {
   constructor(props) {
     super(props);
 
+    this.mountTimeout = null;
+
     this.state = {
       mounted: false,
     };
   }
 
   componentDidMount() {
+    const { delay } = this.props;
     // Hack to get the transition to run on mount
-    setTimeout(() => {
+    this.mountTimout = setTimeout(() => {
       this.setState({
         mounted: true,
       });
-    });
+    }, delay);
+  }
+
+  componentWillUnmount() {
+    if (this.mountTimeout) {
+      clearTimeout(this.mountTimeout());
+    }
   }
 
   render() {
@@ -73,7 +82,6 @@ class BaseReactTransitionGroup extends React.PureComponent {
       initialStyles,
       transitionStyles,
       duration,
-      delay,
     } = this.props;
     const { mounted } = this.state;
 
@@ -81,8 +89,8 @@ class BaseReactTransitionGroup extends React.PureComponent {
     const transitions = typeof transition === 'string' ? [transition] : transition;
     const transitionsStyle = transitions.reduce((acc, t, i) => (
       i === 0
-        ? `${t} ${duration}ms ${timingFunction} ${delay}ms`
-        : `${acc}, ${t} ${duration}ms ${timingFunction} ${delay}ms`
+        ? `${t} ${duration}ms ${timingFunction}`
+        : `${acc}, ${t} ${duration}ms ${timingFunction}`
     ), '');
 
     return (
