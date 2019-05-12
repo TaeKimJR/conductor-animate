@@ -16,7 +16,7 @@ const animations = {
 };
 
 storiesOf('Concert', module)
-  .add('Unison Fade', () => {
+  .add('Unison', () => {
     const config = {
       First: {
         animation: 'Fade',
@@ -164,6 +164,38 @@ storiesOf('Concert', module)
     );
   })
   .add('Cascading Slide', () => {
+    const config = {
+      First: {
+        animation: 'Slide',
+        delay: 0,
+      },
+      Second: {
+        animation: 'Slide',
+        delay: 500,
+      },
+      Third: {
+        animation: 'Slide',
+        delay: 1000,
+      },
+    };
+
+    return (
+      <Conductor config={config} animations={animations}>
+        <div style={{ width: '100vw', display: 'flex' }}>
+          <Animated id="First">
+            <Shape />
+          </Animated>
+          <Animated id="Second">
+            <Shape color={palette.secondary} />
+          </Animated>
+          <Animated id="Third">
+            <Shape color={palette.tertiary} />
+          </Animated>
+        </div>
+      </Conductor>
+    );
+  })
+  .add('Waterfall', () => {
     const config = {
       First: {
         animation: 'Slide',
