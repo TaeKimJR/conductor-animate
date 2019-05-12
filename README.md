@@ -101,6 +101,7 @@ unnecessary animations to your app.
 ```javascript
 {
   Fade: Fade,
+  Flip: Flip,
   Slide: Slide,
   CustomAnimation: CustomAnimation,
 }
