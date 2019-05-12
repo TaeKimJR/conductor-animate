@@ -81,8 +81,8 @@ class BaseReactTransitionGroup extends React.PureComponent {
     const transitions = typeof transition === 'string' ? [transition] : transition;
     const transitionsStyle = transitions.reduce((acc, t, i) => (
       i === 0
-        ? `${t} ${duration}ms`
-        : `${acc}, ${t} ${duration}ms`
+        ? `${t} ${duration}ms ${timingFunction} ${delay}ms`
+        : `${acc}, ${t} ${duration}ms ${timingFunction} ${delay}ms`
     ), '');
 
     return (
@@ -90,7 +90,7 @@ class BaseReactTransitionGroup extends React.PureComponent {
         {state => (
           <div
             style={{
-              transition: `${transitionsStyle} ${timingFunction} ${delay}ms`,
+              transition: transitionsStyle,
               ...initialStyles,
               ...transitionStyles[state],
             }}
