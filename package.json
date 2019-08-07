@@ -1,6 +1,6 @@
 {
   "name": "conductor-animate",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "Orchestrating complex page layout animations with a flick of the wrist.",
   "main": "build",
   "scripts": {
